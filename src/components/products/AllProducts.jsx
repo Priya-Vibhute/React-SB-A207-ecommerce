@@ -25,6 +25,7 @@ function AllProducts() {
           name={p.name}
           description={p.description}
           price={p.price}
+          refreshProducts={fetchProducts}
           />)}
 
       </div>
