@@ -14,7 +14,8 @@ function Product({ id, name, description, price,refreshProducts }) {
   return (
     <div className='col'>
       <div class="card" style={{ width: 18 + "rem" }}>
-        <img src="..." class="card-img-top" alt="..." />
+        {}
+        <img src={`http://localhost:8080/products/${id}/image?${Date.now()}`} class="card-img-top" alt="..." />
         <div class="card-body">
           <p class="card-text">{name}</p>
           <p class="card-text">{description}</p>
@@ -26,7 +27,11 @@ function Product({ id, name, description, price,refreshProducts }) {
 
           <button className='btn btn-danger mx-2' onClick={deleteProduct}>Delete</button>
 
-<UpdateProduct id={id} name={name} description={description} price={price}/>
+<UpdateProduct id={id} 
+name={name} 
+description={description} 
+price={price} 
+refreshProducts={refreshProducts}/>
 
 
 
