@@ -27,8 +27,8 @@ function UpdateProduct({id,name,description,price,refreshProducts}) {
 
             alert(`${p.name} updated`);
             console.log(p);
-            
-            if(data.image?.[0]){
+            if(data.image?.[0])
+            {
             let formData=new FormData();
             formData.append('product_image',data.image[0]);
 
@@ -45,7 +45,7 @@ function UpdateProduct({id,name,description,price,refreshProducts}) {
               console.log(res);
               
             })
-            }
+        }
         })
         
 

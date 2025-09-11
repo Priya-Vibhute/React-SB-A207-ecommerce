@@ -1,7 +1,10 @@
 import React from 'react'
 import UpdateProduct from './UpdateProduct';
+import { useNavigate } from 'react-router-dom';
 
 function Product({ id, name, description, price,refreshProducts }) {
+
+  const navigate=useNavigate();
 
   const deleteProduct=()=>{
     fetch(`http://localhost:8080/products/${id}`,{method:"DELETE"})
@@ -15,6 +18,7 @@ function Product({ id, name, description, price,refreshProducts }) {
     <div className='col'>
       <div class="card" style={{ width: 18 + "rem" }}>
         {}
+        
         <img src={`http://localhost:8080/products/${id}/image?${Date.now()}`} class="card-img-top" alt="..." />
         <div class="card-body">
           <p class="card-text">{name}</p>
@@ -26,6 +30,10 @@ function Product({ id, name, description, price,refreshProducts }) {
 </button>
 
           <button className='btn btn-danger mx-2' onClick={deleteProduct}>Delete</button>
+          <div class="d-grid gap-2 mt-2">
+             <button class="btn btn-primary" type="button" onClick={()=>navigate(`/products/${id}`)}>View Detail</button>
+          </div>
+
 
 <UpdateProduct id={id} 
 name={name} 
